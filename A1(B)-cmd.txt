@@ -1,0 +1,335 @@
+q1 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the first number:");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter the second number:");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        int result = Add(num1, num2);
+
+        Console.WriteLine("The sum is: " + result);
+    }
+
+    static int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+
+
+q2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Printing even numbers from 1 to 100");
+        for(int i = 1; i<=100; i++)
+        {
+            if(isEven(i))
+            {
+             Console.WriteLine(i);
+        }
+        }
+    }
+    static bool isEven(int number)
+    {
+        return number % 2 == 0 ;
+    }
+    
+}
+
+
+q3
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a year:");
+        int year = Convert.ToInt32(Console.ReadLine());
+
+        if (IsLeapYear(year))
+        {
+            Console.WriteLine(year + " is a leap year.");
+        }
+        else
+        {
+            Console.WriteLine(year + " is not a leap year.");
+        }
+    }
+
+    static bool IsLeapYear(int year)
+    {
+        if (year % 4 == 0)
+        {
+            if (year % 100 == 0)
+            {
+                if (year % 400 == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+q4
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter speed in kilometers per hour (km/h):");
+        double kmh = Convert.ToDouble(Console.ReadLine());
+        
+        double mph = ConvertKmhToMph(kmh);
+
+        Console.WriteLine(kmh + " km/h is equal to " + mph + " mph.");
+    }
+
+    static double ConvertKmhToMph(double kmh)
+    {
+        return kmh * 0.621371;
+    }
+}
+
+
+q5
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (IsBuzz(number))
+        {
+            Console.WriteLine(number + " is a Buzz number!");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not a Buzz number.");
+        }
+    }
+
+    static bool IsBuzz(int number)
+    {
+        // Check if the number is divisible by 7 or ends with 7
+        return (number % 7 == 0) || (number % 10 == 7);
+    }
+}
+
+
+q6
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        PrintMultiplicationTable(number);
+    }
+
+    static void PrintMultiplicationTable(int number)
+    {
+        Console.WriteLine($"Multiplication table of {number}:");
+
+        for (int i = 1; i <= 10; i++)
+        {
+            int result = number * i;
+            Console.WriteLine($"{number} * {i} = {result}");
+        }
+    }
+}
+
+
+q7
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        long factorial = CalculateFactorial(number);
+
+        Console.WriteLine($"Factorial of {number} is: {factorial}");
+    }
+
+    static long CalculateFactorial(int number)
+    {
+        
+        if (number == 0 || number == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            long result = 1;
+            for (int i = 2; i <= number; i++)
+            {
+                result *= i;
+            }
+            return result;
+        }
+    }
+}
+
+
+q8
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (IsPrime(number))
+        {
+            Console.WriteLine(number + " is a prime number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not a prime number.");
+        }
+    }
+
+    static bool IsPrime(int number)
+    {
+        if (number <= 1)
+        {
+            return false; // 0 and 1 are not prime numbers
+        }
+
+        if (number == 2 || number == 3)
+        {
+            return true; // 2 and 3 are prime numbers
+        }
+
+        if (number % 2 == 0 || number % 3 == 0)
+        {
+            return false; // Numbers divisible by 2 or 3 are not prime
+        }
+
+        int sqrt = (int)Math.Sqrt(number);
+        for (int i = 5; i <= sqrt; i += 6)
+        {
+            if (number % i == 0 || number % (i + 2) == 0)
+            {
+                return false; // Numbers divisible by i or i+2 are not prime
+            }
+        }
+
+        return true; // If no divisors are found, number is prime
+    }
+}
+
+q9
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the lengths of the three sides of the triangle:");
+        double side1 = Convert.ToDouble(Console.ReadLine());
+        double side2 = Convert.ToDouble(Console.ReadLine());
+        double side3 = Convert.ToDouble(Console.ReadLine());
+
+        string triangleType = CheckTriangleType(side1, side2, side3);
+
+        Console.WriteLine($"The triangle with sides {side1}, {side2}, and {side3} is {triangleType}.");
+    }
+
+    static string CheckTriangleType(double side1, double side2, double side3)
+    {
+        if (side1 <= 0 || side2 <= 0 || side3 <= 0)
+        {
+            return "not a valid triangle (sides must be positive).";
+        }
+
+        if (side1 == side2 && side2 == side3)
+        {
+            return "an Equilateral triangle";
+        }
+        else if (side1 == side2 || side1 == side3 || side2 == side3)
+        {
+            return "an Isosceles triangle";
+        }
+        else
+        {
+            return "a Scalene triangle";
+        }
+    }
+}
+
+
+q10
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the number of rows:");
+        int numRows = Convert.ToInt32(Console.ReadLine());
+
+        PrintPattern(numRows);
+    }
+
+    static void PrintPattern(int numRows)
+    {
+        // Loop through each row
+        for (int i = 1; i <= numRows; i++)
+        {
+            // Print stars for the current row
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine(); // Move to the next line after each row
+        }
+    }
+}
+
