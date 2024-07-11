@@ -1,0 +1,449 @@
+q1
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr1 = { 2, 2, 5, 8, 5, 9, 3 };
+        int[] arr2 = RemoveDuplicates(arr1);
+
+        Console.WriteLine("Array after removing duplicates: ");
+        foreach (int num in arr2)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    static int[] RemoveDuplicates(int[] array)
+    {
+        // First, sort the array to bring duplicates together
+        Array.Sort(array);
+
+        // Create a new array for storing unique elements
+        int[] temp = new int[array.Length];
+        int j = 0;
+
+        // Traverse the sorted array and copy unique elements to the temp array
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            if (array[i] != array[i + 1])
+            {
+                temp[j++] = array[i];
+            }
+        }
+
+        // Add the last element
+        temp[j++] = array[array.Length - 1];
+
+        // Create the result array with the correct size
+        int[] result = new int[j];
+        Array.Copy(temp, result, j);
+
+        return result;
+    }
+}
+
+
+q2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 2, 2, 5, 8, 5, 9, 3 };
+
+        FindLargestAndSecondLargest(arr, out int largest, out int secondLargest);
+
+        Console.WriteLine("Largest number: " + largest);
+        Console.WriteLine("Second largest number: " + secondLargest);
+    }
+
+    static void FindLargestAndSecondLargest(int[] array, out int largest, out int secondLargest)
+    {
+        if (array.Length < 2)
+        {
+            throw new ArgumentException("Array must contain at least two elements.");
+        }
+
+        largest = int.MinValue;
+        secondLargest = int.MinValue;
+
+        foreach (int num in array)
+        {
+            if (num > largest)
+            {
+                secondLargest = largest;
+                largest = num;
+            }
+            else if (num > secondLargest && num != largest)
+            {
+                secondLargest = num;
+            }
+        }
+    }
+}
+
+
+q3
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 2, 0, 5, 0, 8, 5, 0, 9, 3, 0 };
+
+        MoveZerosToEnd(arr);
+
+        Console.WriteLine("Array after moving zeros to the end: ");
+        foreach (int num in arr)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    static void MoveZerosToEnd(int[] array)
+    {
+        int nonZeroIndex = 0;
+
+        // Traverse the array
+        for (int i = 0; i < array.Length; i++)
+        {
+            // If the current element is not zero, move it to the front
+            if (array[i] != 0)
+            {
+                array[nonZeroIndex++] = array[i];
+            }
+        }
+
+        // Fill the remaining positions with zeros
+        for (int i = nonZeroIndex; i < array.Length; i++)
+        {
+            array[i] = 0;
+        }
+    }
+}
+
+
+q4
+
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "hammad";
+        char? result = FindFirstNonRepeatingCharacter(input);
+
+        if (result.HasValue)
+        {
+            Console.WriteLine("The first non-repeating character is: " + result.Value);
+        }
+        else
+        {
+            Console.WriteLine("No non-repeating character found.");
+        }
+    }
+
+    static char? FindFirstNonRepeatingCharacter(string str)
+    {
+        // Dictionary to store the frequency of characters
+        Dictionary<char, int> charCount = new Dictionary<char, int>();
+
+        // Traverse the string to build the frequency map
+        foreach (char c in str)
+        {
+            if (charCount.ContainsKey(c))
+            {
+                charCount[c]++;
+            }
+            else
+            {
+                charCount[c] = 1;
+            }
+        }
+
+        // Traverse the string again to find the first non-repeating character
+        foreach (char c in str)
+        {
+            if (charCount[c] == 1)
+            {
+                return c;
+            }
+        }
+
+        // Return null if no non-repeating character is found
+        return null;
+    }
+}
+
+
+q5
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] A = { 1, 3, 5, 7 };
+        int[] B = { 2, 4, 6, 8 };
+
+        int[] result = MergeSortedArrays(A, B);
+
+        Console.WriteLine("Merged array: ");
+        foreach (int num in result)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    static int[] MergeSortedArrays(int[] A, int[] B)
+    {
+        int[] mergedArray = new int[A.Length + B.Length];
+        int i = 0, j = 0, k = 0;
+
+        // Traverse both arrays and merge them into mergedArray
+        while (i < A.Length && j < B.Length)
+        {
+            if (A[i] < B[j])
+            {
+                mergedArray[k++] = A[i++];
+            }
+            else
+            {
+                mergedArray[k++] = B[j++];
+            }
+        }
+
+        // Copy the remaining elements of A, if any
+        while (i < A.Length)
+        {
+            mergedArray[k++] = A[i++];
+        }
+
+        // Copy the remaining elements of B, if any
+        while (j < B.Length)
+        {
+            mergedArray[k++] = B[j++];
+        }
+
+        return mergedArray;
+    }
+}
+
+
+q6
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] A = { 3, 0, 1, 4 };
+        int missingNumber = FindMissingNumber(A);
+
+        Console.WriteLine("The missing number is: " + missingNumber);
+    }
+
+    static int FindMissingNumber(int[] array)
+    {
+        int n = array.Length;
+        int expectedSum = n * (n + 1) / 2;  // Sum of numbers from 0 to n
+        int actualSum = 0;
+
+        foreach (int num in array)
+        {
+            actualSum += num;
+        }
+
+        return expectedSum - actualSum;
+    }
+}
+
+
+q7
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number = 68;
+
+        if (IsArmstrongNumber(number))
+        {
+            Console.WriteLine(number + " is an Armstrong number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not an Armstrong number.");
+        }
+    }
+
+    static bool IsArmstrongNumber(int num)
+    {
+        int originalNum = num;
+        int sum = 0;
+
+        while (num > 0)
+        {
+            int digit = num % 10;
+            sum += digit * digit * digit;
+            num /= 10;
+        }
+
+        return sum == originalNum;
+    }
+}
+
+
+q8
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] strs = { "interstellar", "internet", "intermediate" };
+        string commonPrefix = FindLongestCommonPrefix(strs);
+
+        Console.WriteLine("The longest common prefix is: " + commonPrefix);
+    }
+
+    static string FindLongestCommonPrefix(string[] strs)
+    {
+        if (strs == null || strs.Length == 0)
+        {
+            return "";
+        }
+
+        string prefix = strs[0];
+
+        for (int i = 1; i < strs.Length; i++)
+        {
+            while (strs[i].IndexOf(prefix) != 0)
+            {
+                prefix = prefix.Substring(0, prefix.Length - 1);
+                if (prefix == "")
+                {
+                    return "";
+                }
+            }
+        }
+
+        return prefix;
+    }
+}
+
+q9
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms: ");
+        int n = int.Parse(Console.ReadLine());
+
+        PrintFibonacciSequence(n);
+    }
+
+    static void PrintFibonacciSequence(int n)
+    {
+        int first = 0, second = 1, next;
+
+        if (n <= 0)
+        {
+            Console.WriteLine("Please enter a positive integer.");
+            return;
+        }
+        
+        Console.WriteLine("Fibonacci sequence up to " + n + " terms:");
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (i == 1)
+            {
+                Console.Write(first + " ");
+                continue;
+            }
+            if (i == 2)
+            {
+                Console.Write(second + " ");
+                continue;
+            }
+            next = first + second;
+            first = second;
+            second = next;
+
+            Console.Write(next + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+q10
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of integers (N): ");
+        int N = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the integers separated by spaces:");
+        string[] inputs = Console.ReadLine().Split(' ');
+        int[] numbers = new int[N];
+
+        if (inputs.Length != N)
+        {
+            Console.WriteLine("The number of entered integers does not match N.");
+            return;
+        }
+
+        for (int i = 0; i < N; i++)
+        {
+            numbers[i] = int.Parse(inputs[i]);
+        }
+
+        int positiveCount = 0;
+        int negativeCount = 0;
+        int total = 0;
+
+        foreach (int number in numbers)
+        {
+            if (number > 0)
+            {
+                positiveCount++;
+            }
+            else if (number < 0)
+            {
+                negativeCount++;
+            }
+            total += number;
+        }
+
+        double average = (double)total / N;
+
+        Console.WriteLine("Number of positive values: " + positiveCount);
+        Console.WriteLine("Number of negative values: " + negativeCount);
+        Console.WriteLine("Total of input values: " + total);
+        Console.WriteLine("Average of input values: " + average);
+    }
+}
