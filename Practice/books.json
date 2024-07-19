@@ -1,0 +1,37 @@
+[
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "description": "A novel about the American dream and the Roaring Twenties.",
+        "image": "path/to/great_gatsby.jpg",
+        "price": "$10.99"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "description": "A novel about racial injustice in the Deep South.",
+        "image": "path/to/to_kill_a_mockingbird.jpg",
+        "price": "$8.99"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "description": "A dystopian novel about totalitarian regime and surveillance.",
+        "image": "path/to/1984.jpg",
+        "price": "$9.99"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "description": "A romantic novel about the manners and matrimonial machinations of early 19th-century England.",
+        "image": "path/to/pride_and_prejudice.jpg",
+        "price": "$7.99"
+    },
+    {
+        "title": "Moby-Dick",
+        "author": "Herman Melville",
+        "description": "A novel about the voyage of the whaling ship Pequod.",
+        "image": "path/to/moby_dick.jpg",
+        "price": "$11.99"
+    }
+]
