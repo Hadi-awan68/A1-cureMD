@@ -1,0 +1,433 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d2dae2;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Search Bar and Button Styles */
+.search-container {
+  margin: 10px auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-bar {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+}
+
+#search-button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #555;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#search-button:hover {
+  background: #444;
+}
+
+/* Search Results */
+#search-results {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#search-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#search-results li {
+  margin: 10px 0;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #fdcb6e;
+  color: black;
+  padding: 15px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav-logo img {
+  height: 70px;
+  margin-right: 15px;
+}
+
+.nav-logo span {
+  font-size: 1.7em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Featured Books Section */
+.featured-books {
+  background-color: #b2bec3;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh; /* Adjust height as needed */
+  max-width: 100%; /* Adjust width as needed */
+  overflow: hidden;
+  margin-bottom: 20px; /* Gap between sections */
+}
+
+.featured-books img {
+  width: 50px;
+  height: 80vh;
+  margin-right: 15px;
+}
+
+.featured-books h2 {
+  margin: 0;
+}
+
+.books-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.book-section {
+  background-color: #fff;
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.book-section h3 {
+  margin-top: 0;
+  background-color: #ffeaa7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+.book-section:hover {
+  transform: scale(1.1);
+}
+
+/* Background images */
+.book-section img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* About Us Section */
+.about-us {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.about-us h2 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.customer-reviews h2 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.review {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.review p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+/* Book List Table Styles */
+.book-list {
+  background-color: #b2bec3;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center; /* Center align text */
+}
+
+.styled-table thead tr {
+  background: linear-gradient(to right, #e1de99, #5997f3); /* Gradient background */
+  color: #fff;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.styled-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.styled-table tbody tr {
+  background-color: #b2bec3;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f1f1f1;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.styled-table td {
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+
+.styled-table td:first-child {
+  border-left: 0;
+}
+
+.styled-table td:last-child {
+  border-right: 0;
+}
+
+.styled-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.styled-table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.styled-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.styled-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+/* Add Book Form Styles */
+.add-book form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-book form label {
+  margin: 10px 0 5px;
+}
+
+.add-book form input,
+.add-book form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.add-book form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-book form button:hover {
+  background: #555;
+}
+
+/* Contact Form Styles */
+.contact-us {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.contact-us h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+  align-items: center; /* Center align items horizontally */
+}
+
+.contact-form label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 8px 15px; /* Adjust padding to reduce width */
+  background-color: #ffeaa7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: auto; /* Adjust width to fit the content */
+  max-width: 200px; /* Set a max-width to control button width */
+}
+
+.contact-form button:hover {
+  background-color: #fdcb6e;
+  transform: scale(1.05);
+}
+
+.contact-form button:focus {
+  outline: none;
+}
+
+/* Footer */
+footer {
+  background-color: #b2bec3;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

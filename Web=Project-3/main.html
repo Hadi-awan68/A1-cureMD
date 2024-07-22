@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery Library -->
+    <script src="script.js" defer></script> <!-- Your Custom JavaScript -->
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Online Bookstore</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for books...">
+            <button id="search-button">Search</button>
+        </div>
+    </header>
+    <section id="search-results">
+        <!-- Search results will be displayed here -->
+    </section>
+    <nav>
+        <div class="nav-logo">
+            <img src="Black and White Illustrative Modern Simple Cute Book Store Logo.png" alt="Logo">
+            <span>My Book Store</span>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="featured-books">
+            <h2>Featured Books</h2>
+            <div class="books-container">
+                <div class="book-section">
+                    <h3>Study Books</h3>
+                    <img src="Study image.jpg" alt="Study Books">
+
+                </div>
+                <div class="book-section">
+                    <h3>Novels</h3>
+                    <img src="novel image.jpg" alt="Novels">
+
+                </div>
+                <div class="book-section">
+                    <h3>Fictional Books</h3>
+                    <img src="Fictional image.jpg" alt="Fictional Books">
+
+                </div>
+            </div>
+        </section>
+        <section class="about-us">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p>Welcome to My Online Bookstore! We are passionate about books and committed to providing you with a
+                    wide selection of genres and titles. Our goal is to make your reading experience enjoyable and
+                    memorable.</p>
+                <p>Founded in 2024, we started with a vision to create a one-stop shop for book enthusiasts around the
+                    world. Our team of book lovers carefully curates our collection to include the latest bestsellers,
+                    classic literature, and hidden gems waiting to be discovered.</p>
+                <p>At My Online Bookstore, customer satisfaction is our top priority. We strive to offer exceptional
+                    service and ensure that every order is handled with care. Thank you for choosing us as your go-to
+                    bookstore!</p>
+            </div>
+        </section>
+
+        <section class="customer-reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <h3>Jane Doe</h3>
+                <p>"An amazing bookstore with a fantastic selection of books! The customer service is excellent, and the
+                    delivery was prompt. Highly recommended!"</p>
+            </div>
+            <div class="review">
+                <h3>John Smith</h3>
+                <p>"I love the variety of books available. The website is easy to navigate, and I always find what I'm
+                    looking for. Great experience overall."</p>
+            </div>
+            <div class="review">
+                <h3>Emily Johnson</h3>
+                <p>"A wonderful place to find both new releases and old favorites. The packaging was top-notch, and my
+                    books arrived in perfect condition."</p>
+            </div>
+
+        </section>
+
+        <section class="book-list">
+            <h2>Book List</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Book Title 1</td>
+                        <td>Author 1</td>
+                        <td>$10.00</td>
+                    </tr>
+                    <tr>
+                        <td>Book Title 2</td>
+                        <td>Author 2</td>
+                        <td>$15.00</td>
+                    </tr>
+                    <tr>
+                        <td>Book Title 3</td>
+                        <td>Author 3</td>
+                        <td>$20.00</td>
+                    </tr>
+                    <tr>
+                        <td>Book Title 4</td>
+                        <td>Author 4</td>
+                        <td>$25.00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+        </section>
+
+        <section class="book-list">
+            <h2>Book List</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="books-table-body">
+                    <!-- Book rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="add-book">
+            <h2>Add New Book</h2>
+            <form id="add-book-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Book Title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" placeholder="Author Name" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Book Description" rows="5"
+                    required></textarea>
+
+                <label for="image-url">Image URL:</label>
+                <input type="text" id="image-url" name="image-url" placeholder="Image URL" required>
+
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        © 2024 My Online Bookstore
+    </footer>
+</body>
+
+</html>
